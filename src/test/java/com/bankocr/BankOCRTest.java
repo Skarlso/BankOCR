@@ -26,4 +26,15 @@ public class BankOCRTest {
     public void testCanReadFileFromResources() throws Exception {
         Assert.assertThat(accountNumberParser.readFileLines("account_numbers.txt"), is(not(nullValue())));
     }
+
+    @Test
+    public void testCanParseThreeByThreeMatrixToNumber() throws Exception {
+        // This should be interpreted as a 4
+        /*
+        4 = |_|
+              |
+         */
+        String[][][] number = {{{""},{""},{""}}, {{"|"},{"_"},{"|"}}, {{""},{""},{"|"}}};
+
+    }
 }
